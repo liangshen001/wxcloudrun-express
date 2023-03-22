@@ -1,4 +1,4 @@
-import Axios from 'axios'
+const Axios = require('axios')
 
 export const code2Session = async (code) => {
     const resp = (await Axios.get("https://api.weixin.qq.com/sns/jscode2session"), {

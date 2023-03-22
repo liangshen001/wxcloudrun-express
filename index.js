@@ -32,6 +32,14 @@ app.post("/api/count", async (req, res) => {
     data: await Counter.count(),
   });
 });
+app.post("/api/login", async (req, res) => {
+  const { code } = req.body;
+
+  res.send({
+    code: 0,
+    data: code,
+  });
+});
 
 // 获取计数
 app.get("/api/count", async (req, res) => {

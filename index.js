@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const { init: initDB, Counter } = require("./db");
+const {code2Session} = require("./api");
 
 const logger = morgan("tiny");
 
@@ -34,10 +35,11 @@ app.post("/api/count", async (req, res) => {
 });
 app.post("/api/login2", async (req, res) => {
   const { code } = req.body;
+  const data = await code2Session(code)
 
   res.send({
     code: 0,
-    data: code,
+    data: data,
   });
 });
 

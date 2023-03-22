@@ -1,6 +1,6 @@
 const Axios = require('axios')
 
-export const code2Session = async (code) => {
+const code2Session = async (code) => {
     const resp = (await Axios.get("https://api.weixin.qq.com/sns/jscode2session"), {
         params: {
             appid: process.env.appid,
@@ -10,4 +10,7 @@ export const code2Session = async (code) => {
         }
     }).data
     return resp.data
+}
+module.exports = {
+    code2Session
 }

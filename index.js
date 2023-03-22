@@ -32,7 +32,7 @@ app.post("/api/count", async (req, res) => {
     data: await Counter.count(),
   });
 });
-app.post("/api/login", async (req, res) => {
+app.post("/api/login2", async (req, res) => {
   const { code } = req.body;
 
   res.send({
